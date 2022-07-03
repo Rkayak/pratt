@@ -1,35 +1,50 @@
-name: Resize images
+name: Process Images
 
 on: [pull_request]
 
 jobs:
-  build:
-    name: Github Action Image Resizing
+  resize:
     runs-on: ubuntu-latest
     steps:
-
-      - uses: actions/checkout@master
-
-      - name: Resize Images
-        id: resize-images
-
-        # You can change the version as well
-        uses: gonzalonaveira/gh-image-resizing@master
+      - uses: actions/checkout@v1
+      - uses: jruipinto/ImageMagick-action@v1
+        name: ImageMagick Action
         with:
-          IMAGES_MAX_WIDTH: "1600"
-          IMAGES_QUALITY: "90"
-          IMAGES_FORMATS: "jpg, jpge, png" 
-          IMAGES_DIRECTORIES: "img"
+          # ImageMagick command to be executed
+          # default is mogrify -path src/assets/images -auto-orient -resize x500 src/assets/images*.*
+          command: mogrify -path img -auto-orient -resize 1600x1600\> img/*/*.*
+          deploy-branch: gh-pages
 
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v4
-        with:
-          add: 'img/'
-          author_name: "github-actions[bot]"
-          author_email: "github-actions@users.noreply.github.com"
-          message: |
-            Images Reszied by Github action
-            ${{steps.resize-images.outputs.result}}
+# https://github.com/marketplace/actions/resize-images
+#   build:
+#     name: Github Action Image Resizing
+#     runs-on: ubuntu-latest
+#     steps:
+
+#       - uses: actions/checkout@master
+
+#       - name: Resize Images
+#         id: resize-images
+
+#         # You can change the version as well
+#         uses: gonzalonaveira/gh-image-resizing@master
+#         with:
+#           IMAGES_MAX_WIDTH: "1600"
+#           IMAGES_QUALITY: "90"
+#           IMAGES_FORMATS: "jpg, jpge, png" 
+#           IMAGES_DIRECTORIES: "img"
+
+#       - name: Commit changes
+#         uses: EndBug/add-and-commit@v4
+#         with:
+#           add: 'img/'
+#           author_name: "github-actions[bot]"
+#           author_email: "github-actions@users.noreply.github.com"
+#           message: |
+#             Images Reszied by Github action
+#             ${{steps.resize-images.outputs.result}}
             
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
