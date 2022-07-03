@@ -3,37 +3,69 @@ name: Process Images
 on: [pull_request]
 
 jobs:
-  resize:
+  imagemagick:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: jruipinto/ImageMagick-action@v1
-        name: ImageMagick Action
+      - uses: actions/checkout@v3
         with:
-          # ImageMagick command to be executed
-          # default is mogrify -path src/assets/images -auto-orient -resize x500 src/assets/images*.*
-          command: mogrify -path img -auto-orient -resize 1600x1600\> img/*/*.*
-          deploy-branch: gh-pages
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      # - name: show GITHUB_REF
+      #   run: echo "GITHUB_REF $GITHUB_REF"
+
+      # - name: reattach HEAD
+      #   env:
+      #     BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+      #   run: |
+      #     echo "BRANCH_NAME $BRANCH_NAME"
+      #     git checkout "$BRANCH_NAME"
+
+      - uses: jruipinto/ImageMagick-action@v1
+        name: resize jpg
+        with:
+          # default ImageMagick command is:
+          #   mogrify -path src/assets/images -auto-orient -resize x500 src/assets/images*.*
+          command: mogrify -resize 1200x1200 img/2006/*.jpg
+        continue-on-error: true
+
+      - uses: jruipinto/ImageMagick-action@v1
+        name: resize JPG
+        with:
+          command: mogrify -resize 1200x1200 img/2006/*.JPG
+        continue-on-error: true
+
+      - uses: jruipinto/ImageMagick-action@v1
+        name: resize png
+        with:
+          command: mogrify -resize 1200x1200 img/2006/*.png
+        continue-on-error: true
+
+      - name: git commit
+        env:
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+        run: |
+          git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/Rkayak/pratt
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          find . -name '*~' -delete
+          git add img
+          git commit -m "update images"
+          git push
 
 # https://github.com/marketplace/actions/resize-images
-#   build:
+#   pillow:
 #     name: Github Action Image Resizing
 #     runs-on: ubuntu-latest
 #     steps:
-
 #       - uses: actions/checkout@master
-
 #       - name: Resize Images
 #         id: resize-images
-
-#         # You can change the version as well
 #         uses: gonzalonaveira/gh-image-resizing@master
 #         with:
 #           IMAGES_MAX_WIDTH: "1600"
 #           IMAGES_QUALITY: "90"
-#           IMAGES_FORMATS: "jpg, jpge, png" 
+#           IMAGES_FORMATS: "jpg, jpge, png"
 #           IMAGES_DIRECTORIES: "img"
-
 #       - name: Commit changes
 #         uses: EndBug/add-and-commit@v4
 #         with:
@@ -41,9 +73,8 @@ jobs:
 #           author_name: "github-actions[bot]"
 #           author_email: "github-actions@users.noreply.github.com"
 #           message: |
-#             Images Reszied by Github action
+#             Images Resized by Github action
 #             ${{steps.resize-images.outputs.result}}
-            
 #         env:
 #           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
