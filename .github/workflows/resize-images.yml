@@ -11,7 +11,9 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.ref }}
 
-      - uses: mfinelli/setup-imagemagick@v1
+      - run: sudo apt install imagemagick
+        continue-on-error: true
+
       - run: identify -format '%w %h %i\n' img/2011/*.JPG | awk '$1>1200||$2>1200' | cut -d\  -f3- | xargs -d\\n mogrify -resize 1200x1200\>
         shell: bash
 
