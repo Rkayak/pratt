@@ -11,7 +11,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.ref }}
 
-      - run: identify -format '%w %h %i\n' img/2011/*.jpg | awk '$1>1200||$2>1200' | cut -d\  -f3- | xargs -d\\n mogrify -resize 1200x1200\>
+      - run: identify -format '%w %h %i\n' img/*/*.jpg | awk '$1>1200||$2>1200' | cut -d\  -f3- | xargs -d\\n mogrify -resize 1200x1200\>
         shell: bash
 
       - run: identify -format '%w %h %i\n' img/*/*.JPG | awk '$1>1200||$2>1200' | cut -d\  -f3- | xargs -d\\n mogrify -resize 1200x1200\>
