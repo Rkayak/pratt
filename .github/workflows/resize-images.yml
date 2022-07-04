@@ -3,6 +3,7 @@ name: Process Images
 on: [pull_request]
 
 jobs:
+
   imagemagick:
     runs-on: ubuntu-latest
     steps:
@@ -10,19 +11,23 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.ref }}
 
-      - uses: jruipinto/ImageMagick-action@v1
-        name: resize jpg
-        with:
-          # default ImageMagick command is:
-          #   mogrify -path src/assets/images -auto-orient -resize x500 src/assets/images*.*
-          command: identify -format '%w %h %i\n' img/*/*.jpg | awk '$1>1200||$2>1200' | cut -d\  -f3- | xargs -d\\n mogrify -resize 1200x1200
-        continue-on-error: true
+      - uses: mfinelli/setup-imagemagick@v1
+        run: identify -format '%w %h %i\n' img/2011/*.JPG | awk '$1>1200||$2>1200' | cut -d\  -f3- | xargs -d\\n mogrify -resize 1200x1200\>
 
-      - uses: jruipinto/ImageMagick-action@v1
-        name: resize JPG
-        with:
-          command: identify -format '%w %h %i\n' img/*/*.JPG | awk '$1>1200||$2>1200' | cut -d\  -f3- | xargs -d\\n mogrify -resize 1200x1200
-        continue-on-error: true
+      # - uses: jruipinto/ImageMagick-action@v1
+      #   name: resize jpg
+      #   with:
+      #     # default ImageMagick command is:
+      #     #   mogrify -path src/assets/images -auto-orient -resize x500 src/assets/images*.*
+      #     command: identify -format '%w %h %i\n' img/*/*.jpg | awk '$1>1200||$2>1200' | cut -d\  -f3- | xargs -d\\n mogrify -resize 1200x1200\>
+      #   continue-on-error: true
+      #   shell: bash
+
+      # - uses: jruipinto/ImageMagick-action@v1
+      #   name: resize JPG
+      #   with:
+      #     command: identify -format '%w %h %i\n' img/*/*.JPG | awk '$1>1200||$2>1200' | cut -d\  -f3- | xargs -d\\n mogrify -resize 1200x1200\>
+      #   continue-on-error: true
 
       # - uses: jruipinto/ImageMagick-action@v1
       #   name: resize png
@@ -41,6 +46,7 @@ jobs:
           git add img
           git commit -m "update images"
           git push
+
 
 # https://github.com/marketplace/actions/resize-images
 #   pillow:
