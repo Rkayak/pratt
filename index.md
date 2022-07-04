@@ -1,8 +1,5 @@
-
 # John & Rebecca Pratt's Nautical Adventures
-
 {% include favorites.html %}
-
 {% include navigation.html %}
 
 <link rel="stylesheet" type="text/css" href="anoceanofsky.css" />
@@ -15,7 +12,6 @@
 ### John
 
 John is a retired Automotive Technician, and high school Automotive Technology Instructor for high school and college. <img src="https://raw.githubusercontent.com/Rkayak/pratt/images/NEW/IMG_3087.JPG" height="150px"> After many years working in the automotive industrial field, John decided to apply his knowledge in a new challenge, obtaining a lifetime Automotive teaching credential. He then finished out his career as an automotive instructor at Placer High School in Auburn, California; teaching for 20 years. During this time period, the Placer County won the honors of being judged as the best Automotive Program in the United States. At the same time that John was teaching fulltime at Placer High School, he also worked part-time at Sierra College, teaching an AT 59 Auto Tech class, in Rocklin, California (which he has since retired). John continues use his field of knowledge for keeping the twin diesel Hinos running smoothly on the 38' Bayliner, along with the upkeep of the 20 HP on the dinghy and the onboard Genset. He is also busy being Gpa.
-
 
 ### Rebecca
 
