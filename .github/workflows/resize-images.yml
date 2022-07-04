@@ -10,34 +10,24 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.ref }}
 
-      # - name: show GITHUB_REF
-      #   run: echo "GITHUB_REF $GITHUB_REF"
-
-      # - name: reattach HEAD
-      #   env:
-      #     BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
-      #   run: |
-      #     echo "BRANCH_NAME $BRANCH_NAME"
-      #     git checkout "$BRANCH_NAME"
-
       - uses: jruipinto/ImageMagick-action@v1
         name: resize jpg
         with:
           # default ImageMagick command is:
           #   mogrify -path src/assets/images -auto-orient -resize x500 src/assets/images*.*
-          command: mogrify -resize 1200x1200 img/2006/*.jpg
+          command: mogrify -resize 1200x1200> img/2007/*.jpg
         continue-on-error: true
 
       - uses: jruipinto/ImageMagick-action@v1
         name: resize JPG
         with:
-          command: mogrify -resize 1200x1200 img/2006/*.JPG
+          command: mogrify -resize 1200x1200> img/2007/*.JPG
         continue-on-error: true
 
       - uses: jruipinto/ImageMagick-action@v1
         name: resize png
         with:
-          command: mogrify -resize 1200x1200 img/2006/*.png
+          command: mogrify -resize 1200x1200> img/2007/*.png
         continue-on-error: true
 
       - name: git commit
