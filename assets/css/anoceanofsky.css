@@ -1,0 +1,232 @@
+/*
+Design by Bryant Smith
+http://www.bryantsmith.com
+Free use with link
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	font-family:"Arial";
+	font-size: 13px;
+	color: #061C37;
+	background: #014D5D url(https://raw.githubusercontent.com/Rkayak/pratt/images/NEW/background.png);
+	background-repeat: repeat-x;
+}
+* {
+  margin: 0 auto 0 auto;
+}
+td {
+	align:center;
+}
+p {
+	padding:0 40px 10px 40px;
+}
+a {
+	text-decoration:none;
+	color:white;
+}
+
+#page {
+  display: block;
+  height:auto;
+  position: relative;
+  overflow: hidden;
+  width: 670px;
+  padding-left:10%;
+}
+
+.topNavigationLink {
+	text-align:center;
+	position:relative;
+	margin-top:30px;
+	font-size:16px;
+	margin-left:-10px;
+	width:121px;
+	height: 35px;
+	line-height: 35px;
+	float:left;
+	color:#CEEAEE;
+	font-family:"Arial";
+	font-weight:bold;
+
+}
+
+
+.topNavigationLinkA {
+	text-align:center;
+	position:relative;
+	margin-top:30px;
+	font-size:16px;
+	margin-left:10px;
+	width:141px;
+	height: 35px;
+	line-height: 35px;
+	float:left;
+	color:#CEEAEE;
+	font-family:"Arial";
+	font-weight:bold;
+}
+.topNavigationLinkA a {
+	text-decoration:none;
+	color:#CDE2FC;
+}
+
+.topNavigationLinkA a:hover {
+	color:#0C61C9;
+	display: block;
+	width:141px;
+	height: 35px;
+	line-height: 35px;
+	background-image:url(https://raw.githubusercontent.com/Rkayak/pratt/images/NEW/tab.png);
+}
+
+.topNavigationLink a {
+	text-decoration:none;
+	color:#CDE2FC;
+}
+
+.topNavigationLink a:hover {
+	color:#0C61C9;
+	display: block;
+	width:121px;
+	height: 35px;
+	line-height: 35px;
+	background-image:url(https://raw.githubusercontent.com/Rkayak/pratt/images/NEW/tab.png);
+}
+
+
+
+#mainPicture {
+	width:670px;
+	height:345px;
+	background-color:#FFFFFF;
+}
+
+#mainPicture .picture {
+	position:relative;
+	width:650px;
+	height:325px;
+	top:10px;
+	background-image:url(https://raw.githubusercontent.com/Rkayak/pratt/images/NEW/IMG_2955RS.jpg);
+	background-repeat:no-repeat;
+}
+
+#headerTitle {
+	position:relative;
+	top:30px;
+	left:40px;
+	font-size:25px;
+	color:#ffffff;
+	font-family:"Adobe Garamond Pro Bold", Georgia, "Times New Roman", Times, serif;
+}
+
+#headerSubtext {
+	position:relative;
+	top:30px;
+	left:50px;
+	font-size:14px;
+	color:#A9C8FA;
+	font-family:"Adobe Garamond Pro Bold", Georgia, "Times New Roman", Times, serif;
+}
+
+.contentBox {
+width:670px;
+height:auto;
+background-color:#FFFFFF;
+}
+
+.contentBox .innerBox {
+position:relative;
+margin-top:10px;
+width:650px;
+height:auto;
+top:10px;
+background-image:url(https://raw.githubusercontent.com/Rkayak/pratt/images/NEW/content_back.png);
+background-repeat:repeat-x;
+padding-bottom:35px;
+}
+
+.contentTitle {
+font-size:19px;
+margin-bottom:0px;
+padding-top:18px;
+margin-left:15px;
+margin-top:15px;
+}
+
+.contentText {
+font-size:13px;
+line-height:24px;
+margin-left:13px;
+margin-right:13px;
+}
+
+#footer {
+
+width: 670px;
+height:16px;
+background: url(https://raw.githubusercontent.com/Rkayak/pratt/images/NEW/footer.png) no-repeat;
+text-align:center;
+font-size:9px;
+font-family:Arial, Helvetica, sans-serif;
+color:#386172;
+padding-top:5px;
+}
+
+#footer a {
+text-decoration:none;
+font-size:9px;
+color:#386172;
+}
+
+#sddm {	margin: 0;
+ 	padding: 0;
+ 	z-index: 30;
+}
+#sddm li {	margin: 0;
+ 	padding-top: 20px;
+ 	list-style: none;
+ 	float: left;
+ 	font: bold 16px arial;
+}
+#sddm li a {	display: inline;
+	margin: 0 0px 0 0;
+ 	padding: 10px 20px;
+	width: 121px;
+ 	background: 74bbfb;
+ 	color: #CDE2FC;
+ 	text-align: center;
+ 	text-decoration: none;
+	height: 35px;
+	line-height: 35px;
+}
+#sddm li a:hover {
+ 	background: #ffffff;
+	color: #0C61C9;
+}
+#sddm div {
+	position: absolute;
+	visibility: hidden;
+	margin: 0;
+	padding: 0;
+	background: #74bbfb;
+	border: none;
+}
+#sddm div a {
+	position: relative;
+	display: inline;
+	margin: 0;
+	padding: 5px 10px;
+	width: auto;
+	white-space: nowrap;
+	text-align: left;
+	text-decoration: none;
+	color: #000000;
+	font: 11px arial;
+}
+#sddm div a:hover {
+	background: #74bbfb;
+	color: #fff;
+}

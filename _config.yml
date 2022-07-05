@@ -1,5 +1,9 @@
-theme: jekyll-theme-architect
+theme: jekyll-theme-dinky
 
-baseurl: https://rkayak.github.io/pratt
+baseurl: /pratt
 
 # https://raw.githubusercontent.com/Rkayak/pratt
+
+
+# for dinky theme
+show_downloads: false
