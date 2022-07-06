@@ -3,17 +3,20 @@ Design by Bryant Smith
 http://www.bryantsmith.com
 Free use with link
 */
-
-body {
+html body {
 	margin: 0;
 	padding: 0;
+}
+
+body {
 	text-align: left;
-	font-family:"Arial";
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 13px;
 	color: #061C37;
 	background: #014D5D url(https://raw.githubusercontent.com/Rkayak/pratt/images/NEW/background.png);
 	background-repeat: repeat-x;
 }
+
 * {
   margin: 0 auto 0 auto;
 }
@@ -48,11 +51,8 @@ a {
 	line-height: 35px;
 	float:left;
 	color:#CEEAEE;
-	font-family:"Arial";
 	font-weight:bold;
-
 }
-
 
 .topNavigationLinkA {
 	text-align:center;
@@ -65,7 +65,6 @@ a {
 	line-height: 35px;
 	float:left;
 	color:#CEEAEE;
-	font-family:"Arial";
 	font-weight:bold;
 }
 .topNavigationLinkA a {
@@ -96,12 +95,11 @@ a {
 	background-image:url(https://raw.githubusercontent.com/Rkayak/pratt/images/NEW/tab.png);
 }
 
-
-
 #mainPicture {
 	width:670px;
 	height:345px;
 	background-color:#FFFFFF;
+	margin-bottom: 15px;
 }
 
 #mainPicture .picture {
@@ -111,6 +109,77 @@ a {
 	top:10px;
 	background-image:url(https://raw.githubusercontent.com/Rkayak/pratt/images/NEW/IMG_2955RS.jpg);
 	background-repeat:no-repeat;
+}
+
+div#header {
+  width: 100%;
+  height: 50px;
+  /*border: 2px solid #000;*/
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+}
+div#header h1 {
+	margin-top:  10px;
+  /*border: 1px solid red;*/
+}
+
+div#leftnav {
+  position: fixed;
+  top:  170px;
+  width: 220px;
+  height: 80%;
+  color:  white;
+  font-size:  1.1em;
+  line-height: 1.6;
+  hover
+  border: 2px solid yellow;
+}
+
+#leftnav ul, menu {
+	padding-inline-start: 10px;
+}
+
+ul#menu li {
+	list-style-position: outside;
+	list-style-type:  none;
+	text-decoration: none;
+}
+
+div#content {
+  margin-left: 250px;
+  padding-top: 10px;
+  padding-left: 20px;
+  background-color: white;
+  width: 70%;
+  /*height:90%;*/
+  /*float: left;*/
+}
+div#content h1, h2, h3, h4, h5, h6 {
+  color: #232323;
+	margin: 36px 10px 10px;
+}
+
+div#content h1, h2, h3 {
+	display: block;
+	border-bottom:  1px solid #ccc;
+	padding-bottom: 5px;
+	line-height: 1.3;
+	font-weight: normal;
+}
+
+div#content h3 {
+	font-size: 18px;
+}
+
+div#content p {
+	display: block;
+	margin-block-start:  1em;
+	margin-block-end:  1em;
+	margin-inline-start:  0px;
+	margin-inline-end:  0px;
+	margin: 36px 10px 10px;
+	padding: 0px;
 }
 
 #headerTitle {
@@ -132,53 +201,51 @@ a {
 }
 
 .contentBox {
-width:670px;
-height:auto;
-background-color:#FFFFFF;
+	width:670px;
+	height:auto;
+	background-color:#FFFFFF;
 }
 
 .contentBox .innerBox {
-position:relative;
-margin-top:10px;
-width:650px;
-height:auto;
-top:10px;
-background-image:url(https://raw.githubusercontent.com/Rkayak/pratt/images/NEW/content_back.png);
-background-repeat:repeat-x;
-padding-bottom:35px;
+	position:relative;
+	margin-top:10px;
+	width:650px;
+	height:auto;
+	top:10px;
+	background-image:url(https://raw.githubusercontent.com/Rkayak/pratt/images/NEW/content_back.png);
+	background-repeat:repeat-x;
+	padding-bottom:35px;
 }
 
 .contentTitle {
-font-size:19px;
-margin-bottom:0px;
-padding-top:18px;
-margin-left:15px;
-margin-top:15px;
+	font-size:19px;
+	margin-bottom:0px;
+	padding-top:18px;
+	margin-left:15px;
+	margin-top:15px;
 }
 
 .contentText {
-font-size:13px;
-line-height:24px;
-margin-left:13px;
-margin-right:13px;
+	font-size:13px;
+	line-height:24px;
+	margin-left:13px;
+	margin-right:13px;
 }
 
-#footer {
-
-width: 670px;
-height:16px;
-background: url(https://raw.githubusercontent.com/Rkayak/pratt/images/NEW/footer.png) no-repeat;
-text-align:center;
-font-size:9px;
-font-family:Arial, Helvetica, sans-serif;
-color:#386172;
-padding-top:5px;
+.footer {
+  width: 100%;
+	height:20px;
+	background: url(https://raw.githubusercontent.com/Rkayak/pratt/images/NEW/footer.png) no-repeat;
+	text-align:center;
+	font-size: 1em;
+	color: white;
+	padding-top: 5px;
+  clear: both;
+  border: 1px solid red;
 }
 
-#footer a {
-text-decoration:none;
-font-size:9px;
-color:#386172;
+.footer a {
+	text-decoration:none;
 }
 
 #sddm {	margin: 0;

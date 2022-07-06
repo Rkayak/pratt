@@ -1,39 +1,48 @@
-<!doctype html>
-<html lang="{{ site.lang | default: "en-US" }}">
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="en-US">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-{% seo %}
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    {% include head-custom.html %}
+    <script src="https://releases.jquery.com/git/jquery-3.x-git.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+    <script src="/pratt/assets/js/lightbox.js"></script>
+
+    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/start/jquery-ui.css"> -->
+    <link rel="stylesheet" href="/pratt/assets/css/lightbox.css">
+    <link rel="stylesheet" href="/pratt/assets/css/anoceanofsky.css">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
 
+      <div id="header">
+        <h1>John & Rebecca Pratt's Nautical Adventures</h1>
+      </div>
+
+      <div id="mainPicture" style="">
+        <div class="picture" style=""></div>
+      </div>
+
+      <div id="leftnav">
         {% include navigation.html %}
+      </div>
 
-        {% if site.github.is_user_page %}
-          <ul>
-            <li><a class="buttons github" href="{{ site.github.owner_url }}">GitHub Profile</a></li>
-          </ul>
-        {% endif %}
-      </header>
-
-      <section>
+      <div id="content" class="contentBox">
         {{ content }}
-      </section>
+      </div>
 
-      <footer>
-        {% include footer.html %}
-      </footer>
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    <footer class="footer" role="contentinfo">
+      &copy; 2006-2022 John Pratt
+      <script>
+      $( "#menu" ).menu();
+      </script>
+      <!-- <a href="https://github.com/MeanyLodge/meanylodge.github.com/edit/master/{{ page.name }}" title="Edit this Page"><img src="/img/icon_edit.png" alt="pencil icon" style="width: 12px; height: 12px; margin: 0;"></a> -->
+    </footer>
   </body>
 </html>

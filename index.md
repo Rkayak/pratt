@@ -1,5 +1,3 @@
-# John & Rebecca Pratt's Nautical Adventures
-
 
 ### J & R relaxing
 <img src="https://raw.githubusercontent.com/Rkayak/pratt/images/NEW/jr_collage.jpg" height="200px">
