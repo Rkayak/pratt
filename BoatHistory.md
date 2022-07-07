@@ -1,5 +1,3 @@
-# John & Rebecca Pratt's Nautical Adventures
-
 # Our Vessels
 
 ## 3818 Bayliner Motoryacht

@@ -1,5 +1,3 @@
-# John & Rebecca Pratt's Nautical Adventures
-
 # Family and Friends
 
 <a href="https://raw.githubusercontent.com/Rkayak/pratt/images/NEW/BillPratt.png" rel="lightbox[FamilyandFriends]" title="My brother Bill Pratt"><img src="https://raw.githubusercontent.com/Rkayak/pratt/images/NEW/BillPratt.png" alt="My brother Bill Pratt" height="150px" /></a>

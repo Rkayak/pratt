@@ -96,6 +96,8 @@ a {
 }
 
 #mainPicture {
+	position: relative;
+	margin-left:  250px;
 	width:670px;
 	height:345px;
 	background-color:#FFFFFF;
@@ -138,12 +140,21 @@ div#leftnav {
 
 #leftnav ul, menu {
 	padding-inline-start: 10px;
+	background-color: #073C7A;
 }
 
 ul#menu li {
 	list-style-position: outside;
 	list-style-type:  none;
 	text-decoration: none;
+	font-size: 0.8em;
+}
+
+ul#menu h1 {
+	color: red;
+	text-decoration: none;
+	font-size: 1em;
+	margin-top: 1em;
 }
 
 div#content {
@@ -174,6 +185,8 @@ div#content h3 {
 
 div#content p {
 	display: block;
+	font-size: 1.2em;
+	line-height: 1.4;
 	margin-block-start:  1em;
 	margin-block-end:  1em;
 	margin-inline-start:  0px;
